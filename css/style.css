@@ -97,8 +97,8 @@ body {
 }
 
 .logo-placeholder-large {
-    width: 120px; 
-    height: 120px; 
+    width: 45px; 
+    height: 45px; 
     background-color: transparent; 
     border: 3px solid var(--secondary);
     border-radius: 15px; 
