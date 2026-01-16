@@ -122,10 +122,6 @@ body {
     }
 }
 
-.logo-placeholder:hover {
-    transform: scale(1.1);
-}
-
 /* Ajuste para telas menores */
 @media (max-width: 768px) {
     .logo-placeholder-large {
