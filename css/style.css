@@ -13,20 +13,24 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: var(--gray-dark);
+    background: linear-gradient(to right, var(--primary-dark), var(--primary));
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 3px solid var(--secondary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .logo-placeholder {
     width: 50px;
     height: 50px;
     background-color: var(--dark);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--secondary);
     border-radius: 8px;
+    background-image: url('../imagens/background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .nav-links {
@@ -39,12 +43,20 @@ body {
     color: var(--light);
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    background-color: var(--primary);
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: var(--secondary);
+    color: var(--dark);
+    font-weight: bold;
 }
 
 .loja-btn {
@@ -55,10 +67,31 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: var(--gray);
-    padding: 3rem 2rem;
+    background: 
+        linear-gradient(rgba(26, 60, 94, 0.85), rgba(26, 60, 94, 0.9)),
+        url('../imagens/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 4rem 2rem;
     text-align: center;
     border-bottom: 3px solid var(--secondary);
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, transparent 20%, rgba(0,0,0,0.3) 100%);
+    z-index: 0;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .logo-placeholder-large {
@@ -68,6 +101,18 @@ body {
     border: 3px solid var(--primary);
     border-radius: 12px;
     margin: 0 auto 2rem;
+}
+.logo-placeholder-large {
+    width: 180px;
+    height: 180px;
+    background-color: var(--dark);
+    border: 4px solid var(--secondary);
+    border-radius: 20px;
+    margin: 0 auto 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-image: url('../imagens/background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .server-info {
