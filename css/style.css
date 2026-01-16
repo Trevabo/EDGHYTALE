@@ -23,8 +23,8 @@ body {
 }
 
 .logo-placeholder {
-    width: 45px;
-    height: 45px; 
+    width: 35px !important;
+    height: 35px !important; 
     background-color: transparent; 
     border: 2px solid var(--secondary);
     border-radius: 8px;
@@ -97,15 +97,15 @@ body {
 }
 
 .logo-placeholder-large {
-    width: 45px; 
-    height: 45px; 
-    background-color: transparent; 
+    width: 80px !important;
+    height: 80px !important;
+    background-color: transparent;
     border: 3px solid var(--secondary);
-    border-radius: 15px; 
-    margin: 0 auto 2rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    margin: 0 auto 1.5rem; /* Reduzi o margin-bottom também */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     background-image: url('../imagens/logo.png');
-    background-size: contain; 
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     animation: floatLogo 4s ease-in-out infinite;
@@ -129,8 +129,8 @@ body {
 /* Ajuste para telas menores */
 @media (max-width: 768px) {
     .logo-placeholder-large {
-        width: 100px;
-        height: 100px;
+        width: 70px !important;
+        height: 70px !important;
     }
 }
 
