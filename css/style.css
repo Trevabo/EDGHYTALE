@@ -22,10 +22,10 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Logo na Navbar - PEQUENA */
+/* Logo na Navbar - AUMENTADA */
 .navbar .logo {
-    width: 40px;
-    height: 40px;
+    width: 60px; /* Aumentado de 40px para 60px */
+    height: 60px;
     max-width: 100%;
     border: 2px solid var(--secondary);
     border-radius: 6px;
@@ -73,7 +73,8 @@ body {
 /* Hero Section */
 .hero {
     background: 
-        linear-gradient(rgba(26, 60, 94, 0.85), rgba(26, 60, 94, 0.9)),
+        linear-gradient(rgba(15, 30, 45, 0.6), rgba(15, 30, 45, 0.7)),
+        /* Reduzido azul: opacidade diminuída e cor mais escura/transparente */
         url('../imagens/background.jpg');
     background-size: cover;
     background-position: center;
@@ -85,12 +86,12 @@ body {
     overflow: hidden;
 }
 
-/* Logo na Hero Section - MÉDIA */
+/* Logo na Hero Section - AUMENTADA */
 .hero .logo {
-    width: 100px;
-    height: 100px;
+    width: 140px; /* Aumentado de 100px para 140px */
+    height: 140px;
     max-width: 100%;
-    max-height: 150px;
+    max-height: 180px;
     border: 3px solid var(--secondary);
     border-radius: 10px;
     margin: 0 auto 1.5rem;
@@ -114,7 +115,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 80%, transparent 20%, rgba(0,0,0,0.3) 100%);
+    background: radial-gradient(circle at 20% 80%, transparent 20%, rgba(0,0,0,0.2) 100%);
     z-index: 0;
 }
 
@@ -330,28 +331,28 @@ body {
     
     /* Ajustes para as logos em dispositivos móveis */
     .navbar .logo {
-        width: 35px;
-        height: 35px;
+        width: 50px; /* Aumentado de 35px para 50px */
+        height: 50px;
     }
     
     .hero .logo {
-        width: 80px;
-        height: 80px;
+        width: 120px; /* Aumentado de 80px para 120px */
+        height: 120px;
     }
 }
 
 /* Classes adicionais para controle de tamanho (opcional) */
 .logo-small {
-    width: 30px !important;
-    height: 30px !important;
+    width: 40px !important;
+    height: 40px !important;
 }
 
 .logo-medium {
-    width: 70px !important;
-    height: 70px !important;
+    width: 90px !important;
+    height: 90px !important;
 }
 
 .logo-large {
-    width: 120px !important;
-    height: 120px !important;
+    width: 160px !important;
+    height: 160px !important;
 }
