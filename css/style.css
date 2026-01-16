@@ -21,20 +21,22 @@ body {
     border-bottom: 3px solid var(--secondary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* Logo na Navbar - PEQUENA */
 .navbar .logo {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
+    max-width: 100%;
     border: 2px solid var(--secondary);
     border-radius: 6px;
-    object-fit: contain; /* Mantém a proporção da imagem */
+    object-fit: contain;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .navbar .logo:hover {
     transform: scale(1.1);
 }
-
-
 
 .nav-links {
     display: flex;
@@ -83,9 +85,12 @@ body {
     overflow: hidden;
 }
 
+/* Logo na Hero Section - MÉDIA */
 .hero .logo {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
+    max-height: 150px;
     border: 3px solid var(--secondary);
     border-radius: 10px;
     margin: 0 auto 1.5rem;
@@ -94,19 +99,12 @@ body {
     animation: floatLogo 4s ease-in-out infinite;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: block; /* Importante para imagens */
+    display: block;
 }
 
 .hero .logo:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-    .hero .logo {
-        width: 70px;
-        height: 70px;
-    }
 }
 
 .hero::before {
@@ -125,8 +123,7 @@ body {
     z-index: 1;
 }
 
-
-/* Animação de flutuação simples */
+/* Animação de flutuação */
 @keyframes floatLogo {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
@@ -330,59 +327,31 @@ body {
     .status-grid {
         grid-template-columns: 1fr;
     }
-
-
-    /* ===== ESTILOS PARA LOGOS - CORRIGIDO ===== */
-
-/* Logo na Navbar */
-.navbar .logo {
-    width: 35px !important;
-    height: 35px !important;
-    border: 2px solid #4CAF50 !important;
-    border-radius: 6px !important;
-    object-fit: contain !important;
-    transition: transform 0.3s ease !important;
-}
-
-.navbar .logo:hover {
-    transform: scale(1.1) !important;
-}
-
-/* Logo na Hero Section */
-.hero .logo {
-    width: 80px !important;
-    height: 80px !important;
-    border: 3px solid #4CAF50 !important;
-    border-radius: 10px !important;
-    margin: 0 auto 1.5rem !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
-    object-fit: contain !important;
-    animation: floatLogo 4s ease-in-out infinite !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    display: block !important;
-}
-
-.hero .logo:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Animação */
-@keyframes floatLogo {
-    0%, 100% { 
-        transform: translateY(0) rotate(0deg) !important; 
-    }
-    50% { 
-        transform: translateY(-10px) rotate(1deg) !important; 
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .hero .logo {
-        width: 70px !important;
-        height: 70px !important;
-    }
-}
     
+    /* Ajustes para as logos em dispositivos móveis */
+    .navbar .logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .hero .logo {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Classes adicionais para controle de tamanho (opcional) */
+.logo-small {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.logo-medium {
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.logo-large {
+    width: 120px !important;
+    height: 120px !important;
+}
