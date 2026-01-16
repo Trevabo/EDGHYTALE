@@ -7,50 +7,175 @@
     <link rel="stylesheet" href="css/cores.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .mods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .mod-card {
+        /* Header da página de mods */
+        .mods-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
             background-color: var(--gray-dark);
             border-radius: 10px;
-            padding: 1.5rem;
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .mods-header h1 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .mods-subtitle {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .mods-description {
+            color: var(--gray-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Grid de mods reorganizado */
+        .mods-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .mods-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 1200px) {
+            .mods-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mods-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Cards de mods melhorados */
+        .mod-card {
+            background: linear-gradient(to bottom right, var(--gray-dark), var(--gray));
+            border-radius: 12px;
+            padding: 1.8rem;
             border: 1px solid var(--gray-light);
-            transition: transform 0.3s, border-color 0.3s;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .mod-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mod-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+        }
+        
+        .mod-title {
+            font-size: 1.4rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .mod-version {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
         
         .mod-category {
             display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 0.25rem 0.75rem;
+            padding: 0.3rem 1rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+        }
+        
+        .mod-description {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
         
         .mod-features {
             list-style: none;
-            margin-top: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .mod-features li {
-            padding: 0.25rem 0;
-            border-bottom: 1px solid var(--gray);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 1.8rem;
         }
         
         .mod-features li:before {
-            content: "✓ ";
+            content: "✓";
+            position: absolute;
+            left: 0;
             color: var(--secondary);
+            font-weight: bold;
         }
+        
+        .mod-footer {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mod-author {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .mod-status {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+        }
+        
+        .status-active {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: var(--success);
+        }
+        
+        .status-required {
+            background-color: rgba(33, 150, 243, 0.2);
+            color: var(--info);
+        }
+        
+        /* Cores para categorias */
+        .category-quality { background-color: rgba(76, 175, 80, 0.2); color: var(--success); }
+        .category-economy { background-color: rgba(33, 150, 243, 0.2); color: var(--info); }
+        .category-combat { background-color: rgba(255, 152, 0, 0.2); color: var(--warning); }
+        .category-building { background-color: rgba(156, 39, 176, 0.2); color: #9c27b0; }
+        .category-mechanics { background-color: rgba(244, 67, 54, 0.2); color: var(--danger); }
+        .category-social { background-color: rgba(103, 58, 183, 0.2); color: #673ab7; }
     </style>
 </head>
 <body>
@@ -62,128 +187,192 @@
             <li><a href="comunidade.html">👥 Comunidade</a></li>
             <li><a href="votar.html">🗳️ Votar</a></li>
             <li><a href="wiki.html">📚 Wiki</a></li>
-            <li><a href="mods.html" class="active">⚙️ Mods</a></li>
+            <li><a href="mods.html" class="active">MODS</a></li>
             <li><a href="loja.html" class="loja-btn">🛒 Loja</a></li>
         </ul>
     </nav>
 
-    <main class="container" style="max-width: 1200px; margin: 2rem auto; padding: 0 2rem;">
-        <section class="mods-intro">
-            <h1>⚙️ Mods do Servidor</h1>
-            <p style="margin-top: 1rem; color: var(--gray-light);">
-                Nosso servidor conta com mods cuidadosamente selecionados para melhorar sua experiência
-                sem quebrar a imersão do jogo original. Todos os mods são testados para garantir
-                compatibilidade e estabilidade.
+    <main class="container" style="max-width: 1400px; margin: 2rem auto; padding: 0 2rem;">
+        <!-- Cabeçalho da página de mods -->
+        <div class="mods-header">
+            <h1>MODS DO SERVIDOR</h1>
+            <div class="mods-subtitle">Melhorias e Funcionalidades Customizadas</div>
+            <p class="mods-description">
+                Nosso servidor conta com uma seleção cuidadosa de mods que aprimoram a experiência de jogo
+                mantendo a essência do Hytale. Todos os mods são otimizados para performance e estabilidade.
             </p>
-        </section>
+        </div>
 
-        <div class="mods-grid">
-            <!-- Mod 1 -->
-            <div class="mod-card">
-                <span class="mod-category" style="background-color: var(--secondary);">QUALIDADE DE VIDA</span>
-                <h3>Hytale Plus</h3>
-                <p>Melhorias de interface e atalhos para facilitar a jogabilidade.</p>
-                <ul class="mod-features">
-                    <li>Inventory sorting automático</li>
-                    <li>Waypoints e minimap</li>
-                    <li>Atalhos de crafting</li>
-                    <li>Sistema de busca no inventário</li>
-                </ul>
-                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
-                    🔄 Atualizado para v1.2.4
+        <!-- Grid de mods em 3 colunas -->
+        <div class="mods-container">
+            <div class="mods-grid">
+                <!-- Mod 1 -->
+                <div class="mod-card">
+                    <div class="mod-header">
+                        <div>
+                            <h3 class="mod-title">Hytale Plus</h3>
+                            <span class="mod-version">v1.2.4</span>
+                        </div>
+                    </div>
+                    <span class="mod-category category-quality">QUALIDADE DE VIDA</span>
+                    <p class="mod-description">
+                        Melhorias de interface e atalhos que facilitam a jogabilidade sem quebrar a imersão.
+                    </p>
+                    <ul class="mod-features">
+                        <li>Organização automática de inventário</li>
+                        <li>Sistema de waypoints e minimapa</li>
+                        <li>Atalhos rápidos de crafting</li>
+                        <li>Busca inteligente nos itens</li>
+                    </ul>
+                    <div class="mod-footer">
+                        <span class="mod-author">Por: HytaleDev Team</span>
+                        <span class="mod-status status-active">✔ Ativo</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Mod 2 -->
-            <div class="mod-card">
-                <span class="mod-category" style="background-color: var(--info);">ECONOMIA</span>
-                <h3>Shopkeepers+</h3>
-                <p>Sistema completo de lojas e economia entre jogadores.</p>
-                <ul class="mod-features">
-                    <li>NPCs comerciantes customizáveis</li>
-                    <li>Sistema de leilões</li>
-                    <li>Mercado global</li>
-                    <li>Histórico de transações</li>
-                </ul>
-                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
-                    ⚡ Necessita permissão especial
+                <!-- Mod 2 -->
+                <div class="mod-card">
+                    <div class="mod-header">
+                        <div>
+                            <h3 class="mod-title">Shopkeepers+</h3>
+                            <span class="mod-version">v3.1.0</span>
+                        </div>
+                    </div>
+                    <span class="mod-category category-economy">ECONOMIA</span>
+                    <p class="mod-description">
+                        Sistema completo de economia com NPCs comerciantes e mercado global entre jogadores.
+                    </p>
+                    <ul class="mod-features">
+                        <li>NPCs comerciantes customizáveis</li>
+                        <li>Sistema de leilões automatizado</li>
+                        <li>Mercado global de itens</li>
+                        <li>Histórico detalhado de transações</li>
+                    </ul>
+                    <div class="mod-footer">
+                        <span class="mod-author">Por: EconomyPro</span>
+                        <span class="mod-status status-required">🛒 Comandos</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Mod 3 -->
-            <div class="mod-card">
-                <span class="mod-category" style="background-color: var(--warning);">COMBATE</span>
-                <h3>Battle Royale Arena</h3>
-                <p>Arenas PvP com modos de combate variados e balanceamento.</p>
-                <ul class="mod-features">
-                    <li>4 modos de combate diferentes</li>
-                    <li>Sistema de ranking ELO</li>
-                    <li>Recompensas por vitória</li>
-                    <li>Estatísticas detalhadas</li>
-                </ul>
-                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
-                    🏆 Temporada 3 ativa
+                <!-- Mod 3 -->
+                <div class="mod-card">
+                    <div class="mod-header">
+                        <div>
+                            <h3 class="mod-title">Battle Royale Arena</h3>
+                            <span class="mod-version">v2.5.1</span>
+                        </div>
+                    </div>
+                    <span class="mod-category category-combat">COMBATE</span>
+                    <p class="mod-description">
+                        Arenas PvP competitivas com múltiplos modos de combate e sistema de ranking balanceado.
+                    </p>
+                    <ul class="mod-features">
+                        <li>4 modos de combate diferentes</li>
+                        <li>Sistema de ranking ELO</li>
+                        <li>Recompensas por vitória</li>
+                        <li>Estatísticas detalhadas de PvP</li>
+                    </ul>
+                    <div class="mod-footer">
+                        <span class="mod-author">Por: BattleMods</span>
+                        <span class="mod-status status-active">🏆 Temporada 3</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Mod 4 -->
-            <div class="mod-card">
-                <span class="mod-category">CONSTRUÇÃO</span>
-                <h3>WorldEdit Tools</h3>
-                <p>Ferramentas avançadas para construção rápida e eficiente.</p>
-                <ul class="mod-features">
-                    <li>Seleção de áreas 3D</li>
-                    <li>Copy/paste de estruturas</li>
-                    <li>Ferramentas de brush</li>
-                    <li>Importação de schematics</li>
-                </ul>
-                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
-                    👷 Apenas para builders
+                <!-- Mod 4 -->
+                <div class="mod-card">
+                    <div class="mod-header">
+                        <div>
+                            <h3 class="mod-title">WorldEdit Tools</h3>
+                            <span class="mod-version">v4.7.2</span>
+                        </div>
+                    </div>
+                    <span class="mod-category category-building">CONSTRUÇÃO</span>
+                    <p class="mod-description">
+                        Ferramentas profissionais para construção rápida e criação de estruturas complexas.
+                    </p>
+                    <ul class="mod-features">
+                        <li>Seleção de áreas 3D avançada</li>
+                        <li>Copy/paste de estruturas</li>
+                        <li>Ferramentas de brush customizáveis</li>
+                        <li>Importação de schematics</li>
+                    </ul>
+                    <div class="mod-footer">
+                        <span class="mod-author">Por: BuildMaster</span>
+                        <span class="mod-status status-required">👷 Builders</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Mod 5 -->
-            <div class="mod-card">
-                <span class="mod-category" style="background-color: var(--danger);">MECÂNICAS</span>
-                <h3>Quests & Adventures</h3>
-                <p>Sistema de missões com narrativa e recompensas progressivas.</p>
-                <ul class="mod-features">
-                    <li>50+ missões customizadas</li>
-                    <li>Sistema de diálogo com NPCs</li>
-                    <li>Progressão por capítulos</li>
-                    <li>Recompensas exclusivas</li>
-                </ul>
-                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
-                    📖 3 capítulos disponíveis
+                <!-- Mod 5 -->
+                <div class="mod-card">
+                    <div class="mod-header">
+                        <div>
+                            <h3 class="mod-title">Quests & Adventures</h3>
+                            <span class="mod-version">v5.0.3</span>
+                        </div>
+                    </div>
+                    <span class="mod-category category-mechanics">MECÂNICAS</span>
+                    <p class="mod-description">
+                        Sistema completo de missões com narrativa imersiva e recompensas progressivas.
+                    </p>
+                    <ul class="mod-features">
+                        <li>50+ missões customizadas</li>
+                        <li>Diálogos interativos com NPCs</li>
+                        <li>Progressão por capítulos</li>
+                        <li>Recompensas exclusivas</li>
+                    </ul>
+                    <div class="mod-footer">
+                        <span class="mod-author">Por: QuestForge</span>
+                        <span class="mod-status status-active">📖 3 Capítulos</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Mod 6 -->
-            <div class="mod-card">
-                <span class="mod-category" style="background-color: purple;">SOCIAL</span>
-                <h3>Party System Pro</h3>
-                <p>Sistema avançado para formar grupos e jogar com amigos.</p>
-                <ul class="mod-features">
-                    <li>Criação de grupos (parties)</li>
-                    <li>Compartilhamento de recursos</li>
-                    <li>Teleporte entre membros</li>
-                    <li>Experiência compartilhada</li>
-                </ul>
-                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
-                    👥 Máximo: 6 jogadores
+                <!-- Mod 6 -->
+                <div class="mod-card">
+                    <div class="mod-header">
+                        <div>
+                            <h3 class="mod-title">Party System Pro</h3>
+                            <span class="mod-version">v1.8.4</span>
+                        </div>
+                    </div>
+                    <span class="mod-category category-social">SOCIAL</span>
+                    <p class="mod-description">
+                        Sistema avançado para formação de grupos com recursos compartilhados e teleporte.
+                    </p>
+                    <ul class="mod-features">
+                        <li>Criação e gestão de grupos</li>
+                        <li>Compartilhamento de recursos</li>
+                        <li>Teleporte entre membros</li>
+                        <li>Experiência compartilhada</li>
+                    </ul>
+                    <div class="mod-footer">
+                        <span class="mod-author">Por: SocialGaming</span>
+                        <span class="mod-status status-active">👥 6 Jogadores</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <section class="mods-info" style="margin-top: 3rem; background-color: var(--gray-dark); padding: 2rem; border-radius: 8px;">
-            <h2>⚠️ Informações Importantes</h2>
-            <ul style="margin-top: 1rem; padding-left: 1.5rem;">
-                <li>Nenhum mod cliente é necessário para jogar</li>
-                <li>Todos os mods rodam apenas no servidor</li>
-                <li>Atualizações automáticas de mods</li>
-                <li>Reporte bugs no nosso Discord</li>
-                <li>Mods podem ser desativados por região</li>
-            </ul>
+        <!-- Informações adicionais -->
+        <section class="mods-info" style="margin-top: 4rem; background: linear-gradient(to right, var(--gray-dark), var(--gray)); padding: 2rem; border-radius: 10px; border-left: 5px solid var(--accent);">
+            <h2 style="color: var(--accent); margin-bottom: 1rem;">📋 Informações Importantes</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem;">✅ Compatibilidade</h3>
+                    <p style="color: var(--gray-light);">Nenhum mod cliente necessário - tudo roda no servidor</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem;">🔄 Atualizações</h3>
+                    <p style="color: var(--gray-light);">Atualizações automáticas todas as segundas-feiras</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem;">🐛 Reportar Bugs</h3>
+                    <p style="color: var(--light);">Use o canal <span style="color: var(--accent);">#reportar-bugs</span> no Discord</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem;">📊 Status</h3>
+                    <p style="color: var(--success);">● Todos os mods estão operacionais</p>
+                </div>
+            </div>
         </section>
     </main>
 
