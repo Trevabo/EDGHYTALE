@@ -26,14 +26,14 @@ body {
 .nav-logo-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-/* Logo na Navbar - MUITO MAIOR */
+/* Logo na Navbar - Ajustada para proporção retangular */
 .navbar .logo {
-    width: 100px; /* Aumentado significativamente */
-    height: 100px;
-    max-width: 100%;
+    width: 120px; /* Ajustado para largura maior */
+    height: auto; /* Altura automática mantendo proporção */
+    max-height: 65px; /* Limite de altura baseado na proporção 2816x1536 */
     border: 3px solid var(--secondary);
     border-radius: 10px;
     object-fit: contain;
@@ -102,12 +102,11 @@ body {
     overflow: hidden;
 }
 
-/* Logo na Hero Section - MUITO MAIOR */
+/* Logo na Hero Section - Ajustada para proporção retangular */
 .hero .logo {
-    width: 200px; /* Aumentado significativamente */
-    height: 200px;
-    max-width: 100%;
-    max-height: 220px;
+    width: 240px; /* Ajustado para largura maior */
+    height: auto; /* Altura automática mantendo proporção */
+    max-height: 130px; /* Baseado na proporção 2816x1536 */
     border: 4px solid var(--secondary);
     border-radius: 15px;
     margin: 0 auto 2rem;
@@ -160,66 +159,140 @@ body {
     }
 }
 
+/* Server Info - Boxes Melhorados */
 .server-info {
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     flex-wrap: wrap;
 }
 
-.ip-box, .discord-box {
-    background-color: var(--gray-dark);
-    padding: 1.5rem;
-    border-radius: 10px;
-    min-width: 280px;
-    border: 2px solid var(--gray-light);
+.info-box {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 2rem;
+    border-radius: 15px;
+    min-width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.ip-box h2, .discord-box h2 {
-    font-size: 1.5rem;
+.info-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--secondary);
+}
+
+.info-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+.info-box.ip-box::before {
+    background: linear-gradient(to right, #3498db, #2ecc71);
+}
+
+.info-box.discord-box::before {
+    background: linear-gradient(to right, #7289da, #5865F2);
+}
+
+.box-icon {
+    font-size: 3rem;
     margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.discord-icon-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.box-content {
+    flex: 1;
+}
+
+.info-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--light);
+}
+
+.info-box p {
+    color: var(--gray-light);
+    margin-bottom: 1.5rem;
 }
 
 .ip-address {
-    font-family: monospace;
-    font-size: 1.3rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1.4rem;
     color: var(--accent);
     margin: 1rem 0;
-    padding: 0.75rem;
-    background-color: var(--dark);
-    border-radius: 6px;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
     border: 1px solid var(--secondary);
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 .copy-ip {
-    background-color: var(--primary);
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
     color: white;
     border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 6px;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     font-size: 1.1rem;
     margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
 }
 
 .copy-ip:hover {
-    background-color: var(--primary-light);
+    background: linear-gradient(to right, var(--primary-light), var(--primary));
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
 }
 
-/* Estilo do botão do Discord com ícone */
+.copy-icon {
+    font-size: 1.2rem;
+}
+
+/* Estilo do botão do Discord */
 .discord-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    background-color: #5865F2;
+    background: linear-gradient(to right, #7289da, #5865F2);
     color: white;
     padding: 0.9rem 2rem;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 1rem;
@@ -230,17 +303,9 @@ body {
 }
 
 .discord-btn:hover {
-    background-color: #4752c4;
+    background: linear-gradient(to right, #5865F2, #4752c4);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(71, 82, 196, 0.4);
-}
-
-/* Ícone do Discord */
-.discord-icon {
-    width: 32px; /* Tamanho adequado para o botão */
-    height: 32px;
-    object-fit: contain;
-    filter: brightness(0) invert(1); /* Torna o ícone branco */
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
 }
 
 /* Main Content */
@@ -390,6 +455,12 @@ body {
     font-size: 1.1rem;
 }
 
+.footer p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--light);
+}
+
 /* Responsividade */
 @media (max-width: 1024px) {
     .container {
@@ -426,7 +497,7 @@ body {
         gap: 1.5rem;
     }
     
-    .ip-box, .discord-box {
+    .info-box {
         min-width: 100%;
     }
     
@@ -441,8 +512,8 @@ body {
     
     /* Ajustes para as logos em dispositivos móveis */
     .navbar .logo {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        max-height: 55px;
     }
     
     .server-name {
@@ -450,13 +521,21 @@ body {
     }
     
     .hero .logo {
-        width: 160px;
-        height: 160px;
+        width: 200px;
+        max-height: 110px;
     }
     
     .nav-links a {
         font-size: 1rem;
         padding: 0.4rem 0.8rem;
+    }
+    
+    .info-box h2 {
+        font-size: 1.5rem;
+    }
+    
+    .ip-address {
+        font-size: 1.2rem;
     }
 }
 
@@ -478,16 +557,31 @@ body {
     }
     
     .navbar .logo {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        max-height: 50px;
     }
     
     .hero .logo {
-        width: 140px;
-        height: 140px;
+        width: 180px;
+        max-height: 100px;
     }
     
     .server-name {
         font-size: 1.3rem;
+    }
+    
+    .info-box {
+        padding: 1.5rem;
+    }
+    
+    .box-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+    
+    .discord-icon-img {
+        width: 40px;
+        height: 40px;
     }
 }
