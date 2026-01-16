@@ -1,0 +1,22 @@
+:root {
+    /* Cores principais baseadas em Hytale - Azul com toques de verde */
+    --primary-dark: #1a3c5e;
+    --primary: #2a5c8a;
+    --primary-light: #3a7cb0;
+    --secondary: #4CAF50; /* Verde para contraste */
+    --accent: #FFC107; /* Amarelo para destaques */
+    
+    /* Cores neutras */
+    --dark: #121212;
+    --gray-dark: #1e1e1e;
+    --gray: #2d2d2d;
+    --gray-light: #3d3d3d;
+    --light: #f5f5f5;
+    --white: #ffffff;
+    
+    /* Estados */
+    --success: #4CAF50;
+    --warning: #FF9800;
+    --danger: #f44336;
+    --info: #2196F3;
+}
