@@ -21,23 +21,20 @@ body {
     border-bottom: 3px solid var(--secondary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
-.logo-placeholder {
+.navbar .logo {
     width: 35px;
     height: 35px;
-    background-color: transparent; 
     border: 2px solid var(--secondary);
     border-radius: 6px;
-    background-image: url('../imagens/logo.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: contain; /* Mantém a proporção da imagem */
     transition: transform 0.3s ease;
 }
 
-.logo-placeholder:hover {
+.navbar .logo:hover {
     transform: scale(1.1);
 }
+
+
 
 .nav-links {
     display: flex;
@@ -86,6 +83,32 @@ body {
     overflow: hidden;
 }
 
+.hero .logo {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--secondary);
+    border-radius: 10px;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    object-fit: contain;
+    animation: floatLogo 4s ease-in-out infinite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block; /* Importante para imagens */
+}
+
+.hero .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .hero .logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -102,27 +125,6 @@ body {
     z-index: 1;
 }
 
-.logo-placeholder-large {
-    width: 80px;
-    height: 80px;
-    background-color: transparent;
-    border: 3px solid var(--secondary);
-    border-radius: 10px;
-    margin: 0 auto 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background-image: url('../imagens/logo.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: floatLogo 4s ease-in-out infinite;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.logo-placeholder-large:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-}
 
 /* Animação de flutuação simples */
 @keyframes floatLogo {
@@ -329,8 +331,3 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .logo-placeholder-large {
-        width: 70px;
-        height: 70px;
-    }
-}
