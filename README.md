@@ -11,12 +11,24 @@ hytale-server-site/
 ├── wiki.html # Guias e tutoriais
 ├── mods.html # Lista de mods instalados
 ├── loja.html # Placeholder da loja
+
+
+
 ├── css/
 │ ├── style.css # Estilos principais
 │ └── cores.css # Paleta de cores
+
+
+
 ├── js/
 │ ├── main.js # Funcionalidades básicas
 │ └── status.js # Status do servidor
+
+
+
 ├── imagens/
 │ └── logo-placeholder.png
+
+
+
 └── README.md
