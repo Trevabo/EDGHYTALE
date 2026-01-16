@@ -330,4 +330,59 @@ body {
     .status-grid {
         grid-template-columns: 1fr;
     }
+
+
+    /* ===== ESTILOS PARA LOGOS - CORRIGIDO ===== */
+
+/* Logo na Navbar */
+.navbar .logo {
+    width: 35px !important;
+    height: 35px !important;
+    border: 2px solid #4CAF50 !important;
+    border-radius: 6px !important;
+    object-fit: contain !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.1) !important;
+}
+
+/* Logo na Hero Section */
+.hero .logo {
+    width: 80px !important;
+    height: 80px !important;
+    border: 3px solid #4CAF50 !important;
+    border-radius: 10px !important;
+    margin: 0 auto 1.5rem !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    object-fit: contain !important;
+    animation: floatLogo 4s ease-in-out infinite !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+}
+
+.hero .logo:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Animação */
+@keyframes floatLogo {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg) !important; 
+    }
+    50% { 
+        transform: translateY(-10px) rotate(1deg) !important; 
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero .logo {
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
     
