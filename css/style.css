@@ -23,16 +23,20 @@ body {
 }
 
 .logo-placeholder {
-    width: 35px !important;
-    height: 35px !important; 
+    width: 35px;
+    height: 35px;
     background-color: transparent; 
     border: 2px solid var(--secondary);
-    border-radius: 8px;
+    border-radius: 6px;
     background-image: url('../imagens/logo.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     transition: transform 0.3s ease;
+}
+
+.logo-placeholder:hover {
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -81,6 +85,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .hero::before {
     content: '';
     position: absolute;
@@ -91,18 +96,19 @@ body {
     background: radial-gradient(circle at 20% 80%, transparent 20%, rgba(0,0,0,0.3) 100%);
     z-index: 0;
 }
+
 .hero-content {
     position: relative;
     z-index: 1;
 }
 
 .logo-placeholder-large {
-    width: 80px !important;
-    height: 80px !important;
+    width: 80px;
+    height: 80px;
     background-color: transparent;
     border: 3px solid var(--secondary);
     border-radius: 10px;
-    margin: 0 auto 1.5rem; /* Reduzi o margin-bottom também */
+    margin: 0 auto 1.5rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     background-image: url('../imagens/logo.png');
     background-size: contain;
@@ -112,24 +118,21 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+.logo-placeholder-large:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
 /* Animação de flutuação simples */
 @keyframes floatLogo {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
     }
     50% {
-        transform: translateY(-10px) rotate(1deg); /* Movimento sutil para cima */
+        transform: translateY(-10px) rotate(1deg);
     }
 }
-
-/* Ajuste para telas menores */
-@media (max-width: 768px) {
-    .logo-placeholder-large {
-        width: 70px !important;
-        height: 70px !important;
-    }
-}
-
 
 .server-info {
     display: flex;
@@ -324,5 +327,10 @@ body {
     
     .status-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .logo-placeholder-large {
+        width: 70px;
+        height: 70px;
     }
 }
