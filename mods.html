@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mods - Servidor Hytale</title>
+    <link rel="stylesheet" href="css/cores.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .mods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .mod-card {
+            background-color: var(--gray-dark);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid var(--gray-light);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .mod-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .mod-category {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .mod-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .mod-features li {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .mod-features li:before {
+            content: "✓ ";
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-placeholder"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Início</a></li>
+            <li><a href="sobre.html">ℹ️ Sobre</a></li>
+            <li><a href="comunidade.html">👥 Comunidade</a></li>
+            <li><a href="votar.html">🗳️ Votar</a></li>
+            <li><a href="wiki.html">📚 Wiki</a></li>
+            <li><a href="mods.html" class="active">⚙️ Mods</a></li>
+            <li><a href="loja.html" class="loja-btn">🛒 Loja</a></li>
+        </ul>
+    </nav>
+
+    <main class="container" style="max-width: 1200px; margin: 2rem auto; padding: 0 2rem;">
+        <section class="mods-intro">
+            <h1>⚙️ Mods do Servidor</h1>
+            <p style="margin-top: 1rem; color: var(--gray-light);">
+                Nosso servidor conta com mods cuidadosamente selecionados para melhorar sua experiência
+                sem quebrar a imersão do jogo original. Todos os mods são testados para garantir
+                compatibilidade e estabilidade.
+            </p>
+        </section>
+
+        <div class="mods-grid">
+            <!-- Mod 1 -->
+            <div class="mod-card">
+                <span class="mod-category" style="background-color: var(--secondary);">QUALIDADE DE VIDA</span>
+                <h3>Hytale Plus</h3>
+                <p>Melhorias de interface e atalhos para facilitar a jogabilidade.</p>
+                <ul class="mod-features">
+                    <li>Inventory sorting automático</li>
+                    <li>Waypoints e minimap</li>
+                    <li>Atalhos de crafting</li>
+                    <li>Sistema de busca no inventário</li>
+                </ul>
+                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
+                    🔄 Atualizado para v1.2.4
+                </div>
+            </div>
+
+            <!-- Mod 2 -->
+            <div class="mod-card">
+                <span class="mod-category" style="background-color: var(--info);">ECONOMIA</span>
+                <h3>Shopkeepers+</h3>
+                <p>Sistema completo de lojas e economia entre jogadores.</p>
+                <ul class="mod-features">
+                    <li>NPCs comerciantes customizáveis</li>
+                    <li>Sistema de leilões</li>
+                    <li>Mercado global</li>
+                    <li>Histórico de transações</li>
+                </ul>
+                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
+                    ⚡ Necessita permissão especial
+                </div>
+            </div>
+
+            <!-- Mod 3 -->
+            <div class="mod-card">
+                <span class="mod-category" style="background-color: var(--warning);">COMBATE</span>
+                <h3>Battle Royale Arena</h3>
+                <p>Arenas PvP com modos de combate variados e balanceamento.</p>
+                <ul class="mod-features">
+                    <li>4 modos de combate diferentes</li>
+                    <li>Sistema de ranking ELO</li>
+                    <li>Recompensas por vitória</li>
+                    <li>Estatísticas detalhadas</li>
+                </ul>
+                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
+                    🏆 Temporada 3 ativa
+                </div>
+            </div>
+
+            <!-- Mod 4 -->
+            <div class="mod-card">
+                <span class="mod-category">CONSTRUÇÃO</span>
+                <h3>WorldEdit Tools</h3>
+                <p>Ferramentas avançadas para construção rápida e eficiente.</p>
+                <ul class="mod-features">
+                    <li>Seleção de áreas 3D</li>
+                    <li>Copy/paste de estruturas</li>
+                    <li>Ferramentas de brush</li>
+                    <li>Importação de schematics</li>
+                </ul>
+                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
+                    👷 Apenas para builders
+                </div>
+            </div>
+
+            <!-- Mod 5 -->
+            <div class="mod-card">
+                <span class="mod-category" style="background-color: var(--danger);">MECÂNICAS</span>
+                <h3>Quests & Adventures</h3>
+                <p>Sistema de missões com narrativa e recompensas progressivas.</p>
+                <ul class="mod-features">
+                    <li>50+ missões customizadas</li>
+                    <li>Sistema de diálogo com NPCs</li>
+                    <li>Progressão por capítulos</li>
+                    <li>Recompensas exclusivas</li>
+                </ul>
+                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
+                    📖 3 capítulos disponíveis
+                </div>
+            </div>
+
+            <!-- Mod 6 -->
+            <div class="mod-card">
+                <span class="mod-category" style="background-color: purple;">SOCIAL</span>
+                <h3>Party System Pro</h3>
+                <p>Sistema avançado para formar grupos e jogar com amigos.</p>
+                <ul class="mod-features">
+                    <li>Criação de grupos (parties)</li>
+                    <li>Compartilhamento de recursos</li>
+                    <li>Teleporte entre membros</li>
+                    <li>Experiência compartilhada</li>
+                </ul>
+                <div style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem;">
+                    👥 Máximo: 6 jogadores
+                </div>
+            </div>
+        </div>
+
+        <section class="mods-info" style="margin-top: 3rem; background-color: var(--gray-dark); padding: 2rem; border-radius: 8px;">
+            <h2>⚠️ Informações Importantes</h2>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                <li>Nenhum mod cliente é necessário para jogar</li>
+                <li>Todos os mods rodam apenas no servidor</li>
+                <li>Atualizações automáticas de mods</li>
+                <li>Reporte bugs no nosso Discord</li>
+                <li>Mods podem ser desativados por região</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Servidor Hytale. Todos os direitos reservados.</p>
+        <p>Mods são propriedade de seus respectivos criadores.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

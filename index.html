@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor Hytale - Início</title>
+    <link rel="stylesheet" href="css/cores.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="imagens/logo.png" alt="Logo" class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">🏠 Início</a></li>
+            <li><a href="sobre.html">ℹ️ Sobre</a></li>
+            <li><a href="comunidade.html">👥 Comunidade</a></li>
+            <li><a href="votar.html">🗳️ Votar</a></li>
+            <li><a href="wiki.html">📚 Wiki</a></li>
+            <li><a href="mods.html">⚙️ Mods</a></li>
+            <li><a href="loja.html" class="loja-btn">🛒 Loja</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="imagens/logo.png" alt="Logo" class="logo"></div>
+            </div>
+            <h1>Bem-vindo ao Nosso Servidor Hytale</h1>
+            <div class="server-info">
+                <div class="ip-box">
+                    <h2>🖥️ IP do Servidor</h2>
+                    <p class="ip-address">sp-36.raze.host:25668</p>
+                    <button class="copy-ip" onclick="copiarIP()">Copiar IP</button>
+                </div>
+                <div class="discord-box">
+                    <h2>💬 Discord</h2>
+                    <a href="https://discord.gg/seulink" target="_blank" class="discord-btn">
+                        Entrar no Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <section class="comunicados">
+                <h2>📢 Comunicados</h2>
+                <div class="comunicados-box">
+                    <div class="comunicado">
+                        <span class="data">15/05/2024</span>
+                        <p>Evento especial de fim de semana começando sexta-feira!</p>
+                    </div>
+                    <div class="comunicado">
+                        <span class="data">10/05/2024</span>
+                        <p>Nova atualização de mods instalada. Confira a página de Mods.</p>
+                    </div>
+                    <div class="comunicado">
+                        <span class="data">05/05/2024</span>
+                        <p>Sistema de votação renovado. Vote e ganhe recompensas!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="status">
+                <h2>📊 Status do Servidor</h2>
+                <div class="status-grid">
+                    <div class="status-card">
+                        <h3>👥 Jogadores Online</h3>
+                        <p class="online-count">24/100</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 24%"></div>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <h3>🛡️ Staff Online</h3>
+                        <ul class="staff-list">
+                            <li>Admin_Player</li>
+                            <li>Mod_Helper</li>
+                            <li>Builder_Pro</li>
+                        </ul>
+                    </div>
+                    <div class="status-card">
+                        <h3>🟢 Status</h3>
+                        <p class="server-status online">Online</p>
+                        <p class="ping">Ping: 45ms</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h3>⚡ Destaques</h3>
+                <ul class="destaques-list">
+                    <li>🎯 Evento PvP Semanal</li>
+                    <li>🏗️ Novas Construções</li>
+                    <li>🎁 Recompensas de Voto</li>
+                    <li>📈 Ranking Atualizado</li>
+                </ul>
+            </div>
+            <div class="sidebar-box">
+                <h3>🔗 Links Rápidos</h3>
+                <a href="votar.html" class="quick-link">🗳️ Votar no Servidor</a>
+                <a href="wiki.html" class="quick-link">📚 Wiki e Guias</a>
+                    <a href="mods.html" class="quick-link">⚙️ Mods Instalados</a>
+                <a href="loja.html" class="quick-link loja">🛒 Visitar Loja</a>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Servidor Hytale. Todos os direitos reservados.</p>
+        <p>Este servidor não é afiliado à Hypixel Studios.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/status.js"></script>
+</body>
+</html>
