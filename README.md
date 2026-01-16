@@ -4,6 +4,7 @@ Site completo para servidor de Hytale com todas as funcionalidades necessárias.
 
 ## 📁 Estrutura de Arquivos
 hytale-server-site/
+
 ├── index.html # Página inicial
 ├── sobre.html # Sobre o servidor
 ├── comunidade.html # Regras e comunidade
@@ -32,3 +33,4 @@ hytale-server-site/
 
 
 └── README.md
+
